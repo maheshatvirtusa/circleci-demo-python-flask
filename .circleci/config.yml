@@ -11,7 +11,6 @@ jobs:
           POSTGRES_USER: ubuntu
           POSTGRES_DB: circle_test
           POSTGRES_PASSWORD: ""
-      - image: selenium/standalone-chrome:3.141.59-titanium
     steps:
       - checkout
       - run: mkdir test-reports
