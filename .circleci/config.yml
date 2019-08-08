@@ -24,6 +24,10 @@ jobs:
             java -jar selenium-server-standalone-3.5.3.jar -log test-reports/selenium.log -port 8080
           background: true
       - run:
+          name: Sleep
+          command: |
+            sleep 1m
+      - run:
           name: Download and start X
           command: |
             sudo apt-get update
