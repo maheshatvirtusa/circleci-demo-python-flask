@@ -23,6 +23,12 @@ jobs:
           command: |
             java -jar selenium-server-standalone-3.5.3.jar -log test-reports/selenium.log -port 8080
           background: true
+      - run:
+          name: Download and start X
+          command: |
+            sudo apt-get install -y x11vnc
+            x11vnc -forever -nopw
+          background: true
       - restore_cache:
           key: deps1-{{ .Branch }}-{{ checksum "requirements/dev.txt" }}
       - run:
